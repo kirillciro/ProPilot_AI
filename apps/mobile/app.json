@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "ProPilot AI",
+    "slug": "propilot-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "propilot",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "com.propilot.ai",
+      "appleTeamId": "N7A2M3THT8"
+    },
+    "android": {
+      "package": "com.propilot.ai",
+      "adaptiveIcon": {
+        "backgroundColor": "#04276E",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "ProPilot AI uses the camera so you can photograph parts and problems for analysis.",
+          "photosPermission": "ProPilot AI reads photos you choose so it can analyse them.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#040C26",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-media-library",
+        {
+          "savePhotosPermission": "ProPilot AI saves images you choose to your photo library.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "ProPilot AI uses Face ID to unlock your account."
+        }
+      ],
+      "./plugins/without-apple-signin"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

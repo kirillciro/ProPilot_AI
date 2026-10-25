@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "engines": {
-    "node": ">=22.18"
+    "node": "24"
   },
   "workspaces": [
     "apps/*",
@@ -12,6 +12,8 @@
   "scripts": {
     "api": "npm run dev -w @propilot/api",
     "mobile": "npm run start -w @propilot/mobile",
+    "build": "npm run build -w @propilot/api",
+    "start": "npm run migrate -w @propilot/api && npm run start -w @propilot/api",
     "typecheck": "npm run typecheck --workspaces --if-present"
   }
 }
